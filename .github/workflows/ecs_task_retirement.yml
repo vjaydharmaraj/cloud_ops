@@ -1,1 +1,31 @@
+name: ECS Task Patching Automation
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Runs every 7 days (Sunday at midnight UTC)
+  workflow_dispatch:  # Manual trigger option
+
+jobs:
+  ecs-patch-refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install boto3 slack_sdk
+
+      - name: Refresh ECS Services
+        run: |
+          python .github/workflows/ecs_auto_retirement.py
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
 

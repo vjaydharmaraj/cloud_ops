@@ -23,7 +23,7 @@ jobs:
 
       - name: Refresh ECS Services
         run: |
-          python .github/workflows/ecs_auto_retirement.py
+          python python_scripts/ecs_task_auto_retirement.py
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

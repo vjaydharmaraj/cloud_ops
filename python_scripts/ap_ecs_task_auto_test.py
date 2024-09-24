@@ -8,7 +8,7 @@ ecs_client = boto3.client('ecs', region_name='ap-southeast-2')
 cloudwatch_client = boto3.client('cloudwatch')
 health_client = boto3.client('health')
 
-slack_token = "https://hooks.slack.com/services/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"
+slack_token = ""              #replace the webhook token
 channel = "#test-vijay"
 
 def fetch_recent_events():

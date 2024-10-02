@@ -34,7 +34,7 @@ def fetch_affected_entities(event_arn):
     return entities
 
 def check_and_manage_alarms(cluster, service):
-    metrics = ['CPUUtilization', 'MemoryUtilization', 'UnhealthyHostCount']
+    metrics = ['CPUUtilization', 'MemoryUtilization']
     alarms_found = False
 
     for metric in metrics:
@@ -84,7 +84,7 @@ def wait_for_service_stabilization(cluster, service, timeout=300):              
         time.sleep(30)
 
 def reenable_cloudwatch_alarms(cluster, service):
-    metrics = ['CPUUtilization', 'MemoryUtilization', 'UnhealthyHostCount']
+    metrics = ['CPUUtilization', 'MemoryUtilization']
     alarms_found = False
 
     for metric in metrics:

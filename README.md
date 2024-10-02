@@ -54,5 +54,8 @@ The workflow is defined in .github/workflows/ecs_task_retirement.yml
 **Service Refresh:** Refreshes ECS services and waits for stabilization.
 **Re-enable Alarms:** Once stabilized, re-enables alarms and sends Slack notifications.
 
+![ECS Task](ecs_task.png)
+
+
 # 💡 Contributing
 Contributions are welcome! If you have suggestions or find bugs, feel free to open an issue or submit a pull request. Let's enhance this automation together!

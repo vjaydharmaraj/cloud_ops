@@ -26,15 +26,14 @@ Before running this project, ensure you have:
 
 ## 🛠 Installation
 1. **Clone the repository**:
-
 _git clone https://github.com/yourusername/ecs-service-refresh-automation.git_
 
 
 # 🚀 Usage
 
 Running the Script
-# Execute the script manually using:
 
+**Execute the script manually using:**
 _python python_scripts/ecs_task_auto_retirement.py_
 
 
